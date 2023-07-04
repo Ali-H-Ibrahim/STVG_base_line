@@ -3,7 +3,7 @@ from video_Sreams_manager import videoStreamsManager
 
 
 # Define paths to video streams for each camera
-path ='data/videos/Melhim.mp4'
+path ='data/videos/Ghosted.mkv'
 
 YOLO = False
 CAPTION = True

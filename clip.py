@@ -21,7 +21,8 @@ class videoClip:
         for name in set(self.list_names_objects):
             names=names  + name+","
         # create some sample data
-        data = {'start': self.start,
+        data = { 'id':self.image_name.split('.')[0],
+                'start': self.start,
                 'end': self.end,
                 'names_objects' : names
                 }
@@ -59,4 +60,4 @@ class videoClip:
             df = pd.concat([df_last, df], ignore_index=True)
 
         # save the DataFrame to an Excel file
-        df.to_csv(newpath + '/clip_caption_file' +'.csv', index=False)    
+        df.to_csv(newpath + '/clip_caption_file' +'.csv', index=False)  

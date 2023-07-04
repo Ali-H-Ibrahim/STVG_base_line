@@ -10,11 +10,11 @@ class FolderChecker:
         print(self.path)
         if os.path.isdir(self.path):
             file_list = os.listdir(self.path)
-            if len(file_list) > 1:
-                print("Folder contains more than one file")
+            if len(file_list) >= 1:
+                print("Folder contains more than zero file")
                 return True
             else:
-                print("Folder does not contain more than one file")
+                print("Folder does not contain more than zero file")
                 return False
         else:
             os.makedirs(self.path)
