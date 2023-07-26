@@ -2,7 +2,7 @@ import cv2 as cv
 from helper.constants import DATA_PATH,CLIP_DURATION
 from video_services.extract_objects_from_clips import ExtractObjectsFromClips
 from video_services.extract_caption_rom_clips import ExtractCaptionFromClips
-from video_services.clips_image import ClipsImage
+from video_services.imageClipsService import ImageClipsService
 from video_services.clips_pkl import ClipsPkl
 from video_services.save_excel import SaveExel
 import os
@@ -19,17 +19,14 @@ class VideoStream:
         self.path_excel = self.path_data + '/excel/'
         self.total_frames = int(self.cap.get(cv.CAP_PROP_FRAME_COUNT))
         self.fps = int(self.cap.get(cv.CAP_PROP_FPS))
-        # self.fps = 30 if self.fps == 0 else self.fps
-        # self.fps = str(os.path.splitext(os.path.basename(url))[0].split("_")[-1])
-        # print("ssssssssssssssssssssss0",self.fps)
         self.duration = self.total_frames / self.fps 
         self.step_detect = CLIP_DURATION * self.fps
-
         self.frame_number=0
         self.clips = []
         self.extractor_objects = ExtractObjectsFromClips(self)
         self.extractor_caption = ExtractCaptionFromClips(self)
-        self.Clips_Image = ClipsImage(self)
+        
+        self.Clips_Image = ImageClipsService(self)
         self.Clips_pkl = ClipsPkl(self)
         self.sever_exel = SaveExel(self)
 

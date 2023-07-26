@@ -28,7 +28,8 @@ class SaveExel:
                     'start': clip.start,
                     'end': clip.end,
                     'names_objects' : names,
-                    'caption' : clip.caption
+                    'caption' : clip.caption,
+                     'sound_caption' : clip.sound_caption
 
                     }
             # create a DataFrame from the data

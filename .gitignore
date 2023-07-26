@@ -1,0 +1,10 @@
+__pycache__/
+.idea/
+UI/
+data/
+*.pt
+*.index
+*.db
+*.zip
+*.rar
+*.pyc

@@ -1,6 +1,7 @@
 import cv2 as cv
 
 from VideoStream import VideoStream
+from extract_transcript import ExtractTranscript
 
 # Initialize Detector object
 class videoStreamsManager:
@@ -8,6 +9,8 @@ class videoStreamsManager:
         self.video_Sreams = []
         self.detection = True
         self.count = 0
+        self.extractor_transcript = ExtractTranscript()
+
 
 
     def add_video_Stream(self, path):
@@ -47,6 +50,7 @@ class videoStreamsManager:
                         video_Sream.extractor_objects.by_yolo()
                     if CAPTION:  
                         video_Sream.extractor_caption.by_GPT2_VIT()
+                    self.extractor_transcript.from_video(video_Sream)    
 
                     video_Sream.sever_exel.save()    
                         

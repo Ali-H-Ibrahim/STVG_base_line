@@ -9,6 +9,7 @@ class videoClip:
         self.end = 0
         self.list_names_objects = []
         self.caption = ''
+        self.sound_caption =''
 
 
 
@@ -47,7 +48,8 @@ class videoClip:
       
             
         # create some sample data
-        data = {'start': self.start,
+        data = {'id':self.image_name.split('.')[0],
+                 'start': self.start,
                 'end': self.end,
                 'caption' : self.caption
                 }
